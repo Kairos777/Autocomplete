@@ -1,13 +1,12 @@
 import React from 'react';
 import Autocomplete from "./components/Autocomplete";
 import './App.css';
-import { mockData } from './mock-data/MockData';
-
+import { dataFetcher } from './services/dataFetcher';
 
 function App() {
   return (
     <div className="App">
-      <Autocomplete data={mockData} />
+      <Autocomplete search={dataFetcher.searchFruit} />
     </div>
   );
 }

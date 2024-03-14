@@ -2,15 +2,14 @@ import React, { useState, useRef } from 'react';
 import './Autoсomplete.css';
 import { StatusMessage } from '../../enums/StatusMessages';
 import { debounce } from '../../utils/debounce';
-import { getMockData } from '../../utils/getMockData';
 import { DataItem } from '../../types/DataItem';
 
 interface AutoCompleteProps {
     minimumQueryLength?: number;
-    data: DataItem[]; // prod variant would be URL prop
+    search: () => Promise<DataItem[]>;
 }
 
-const Autocomplete: React.FC<AutoCompleteProps> = ({ data, minimumQueryLength = 2, ...rest }) => {
+const Autocomplete: React.FC<AutoCompleteProps> = ({ search, minimumQueryLength = 2, ...rest }) => {
     const [suggestions, setSuggestions] = useState<DataItem[]>([]);
     const [statusMessage, setStatusMessage] = useState<StatusMessage>(StatusMessage.EMPTY);
     const inputRef = useRef<HTMLInputElement>(null);
@@ -25,7 +24,7 @@ const Autocomplete: React.FC<AutoCompleteProps> = ({ data, minimumQueryLength = 
 
         try {
             setStatusMessage(StatusMessage.LOADING);
-            const result = await getMockData(data);
+            const result = await search();
 
             const filteredSuggestions = result.filter(item =>
                 item.name.toLowerCase().includes(inputRef.current?.value?.toLowerCase() ?? '')
