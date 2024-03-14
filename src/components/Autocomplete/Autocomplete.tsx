@@ -3,14 +3,14 @@ import './Autoсomplete.css';
 import { StatusMessage } from '../../enums/StatusMessages';
 import { debounce } from '../../utils/debounce';
 import { getMockData } from '../../utils/getMockData';
-import { DataItem } from '../../mock-data/MockData';
+import { DataItem } from '../../types/DataItem';
 
 interface AutoCompleteProps {
     minimumQueryLength?: number;
     data: DataItem[]; // prod variant would be URL prop
 }
 
-const Index: React.FC<AutoCompleteProps> = ({ data, minimumQueryLength = 2, ...rest }) => {
+const Autocomplete: React.FC<AutoCompleteProps> = ({ data, minimumQueryLength = 2, ...rest }) => {
     const [suggestions, setSuggestions] = useState<DataItem[]>([]);
     const [statusMessage, setStatusMessage] = useState<StatusMessage>(StatusMessage.EMPTY);
     const inputRef = useRef<HTMLInputElement>(null);
@@ -102,4 +102,4 @@ const Index: React.FC<AutoCompleteProps> = ({ data, minimumQueryLength = 2, ...r
     );
 };
 
-export default Index;
+export default Autocomplete;

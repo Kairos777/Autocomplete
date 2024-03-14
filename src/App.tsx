@@ -1,5 +1,5 @@
 import React from 'react';
-import Index from "./components/Autocomplete";
+import Autocomplete from "./components/Autocomplete";
 import './App.css';
 import { mockData } from './mock-data/MockData';
 
@@ -7,7 +7,7 @@ import { mockData } from './mock-data/MockData';
 function App() {
   return (
     <div className="App">
-      <Index data={mockData} />
+      <Autocomplete data={mockData} />
     </div>
   );
 }

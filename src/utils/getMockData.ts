@@ -1,4 +1,4 @@
-import { DataItem } from '../mock-data/MockData';
+import { DataItem } from '../types/DataItem';
 
 export const getMockData = (data: DataItem[]): Promise<DataItem[]> => {
     return new Promise(resolve => {

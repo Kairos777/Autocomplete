@@ -1,7 +1,4 @@
-export interface DataItem {
-    id: number;
-    name: string;
-}
+import { DataItem } from '../types/DataItem';
 
 export const mockData: DataItem[] = [
     { id: 1, name: 'Apple' },
@@ -19,4 +16,28 @@ export const mockData: DataItem[] = [
     { id: 13, name: 'Cherry' },
     { id: 14, name: 'Lemon' },
     { id: 15, name: 'Coconut' },
+    { id: 16, name: 'Pomegranate' },
+    { id: 17, name: 'Apricot' },
+    { id: 18, name: 'Fig' },
+    { id: 19, name: 'Cantaloupe' },
+    { id: 20, name: 'Plum' },
+    { id: 21, name: 'Raspberry' },
+    { id: 22, name: 'Blackberry' },
+    { id: 23, name: 'Cranberry' },
+    { id: 24, name: 'Cherry' },
+    { id: 25, name: 'Lime' },
+    { id: 26, name: 'Passionfruit' },
+    { id: 27, name: 'Guava' },
+    { id: 28, name: 'Dragonfruit' },
+    { id: 29, name: 'Lychee' },
+    { id: 30, name: 'Tangerine' },
+    { id: 31, name: 'Nectarine' },
+    { id: 32, name: 'Grapefruit' },
+    { id: 33, name: 'Persimmon' },
+    { id: 34, name: 'Kumquat' },
+    { id: 35, name: 'Starfruit' },
+    { id: 36, name: 'Papaya' },
+    { id: 37, name: 'Durian' },
+    { id: 38, name: 'Jackfruit' },
+    { id: 39, name: 'Honeydew' },
 ];
